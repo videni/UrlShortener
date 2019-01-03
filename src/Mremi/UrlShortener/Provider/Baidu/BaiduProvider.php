@@ -53,7 +53,7 @@ class BaiduProvider implements UrlShortenerProviderInterface
     {
         $client = $this->createClient();
 
-        $response = $client->post('/admin/create', array_merge(
+        $response = $client->post('/admin/v2/create', array_merge(
             array(
                 'json' => array(
                     'url' => $link->getLongUrl(),
@@ -74,7 +74,7 @@ class BaiduProvider implements UrlShortenerProviderInterface
     {
         $client = $this->createClient();
 
-        $response = $client->post('/admin/query', array_merge(
+        $response = $client->post('/admin/v2/query', array_merge(
             array(
                 'json' => array(
                     'shortUrl' => $link->getShortUrl(),
